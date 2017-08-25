@@ -707,7 +707,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     style: ({
       fontFamily: _vm.fontName
     })
-  }, [_vm._v("ကခဂဃငစဆဇဈညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဝသဟဠအ ကိုကြီး မှီခို ချောက် ချွတ် ကြိုက် ၁၂၃၄၅၆၇၈၉၀")]), _vm._v(" "), _c('td', [_c('a', {
+  }, [_vm._v("သီဟိုဠ်မှ ဉာဏ်ကြီးရှင်သည် အာယုဝဍ္ဎနဆေးညွှန်းစာကို ဇလွန်ဈေးဘေးဗာဒံပင်ထက် အဓိဋ္ဌာန်လျက် ဂဃနဏဖတ်ခဲ့သည်။")]), _vm._v(" "), _c('td', [_c('a', {
     attrs: {
       "href": './fonts/' + _vm.fontName + '.ttf'
     }
