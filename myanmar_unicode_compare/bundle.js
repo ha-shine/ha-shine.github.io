@@ -60,110 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__font_line_vue__ = __webpack_require__(44);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__level_bar_vue__ = __webpack_require__(48);
-
-
-
-Vue.component('font-line', __WEBPACK_IMPORTED_MODULE_0__font_line_vue__["a" /* default */])
-Vue.component('level-bar', __WEBPACK_IMPORTED_MODULE_1__level_bar_vue__["a" /* default */]);
-new Vue({
-    el: '#app',
-    created: function() {
-        for (var font in this.fonts) {
-            this.selectedFonts.push({name: this.fonts[font], selected: false});
-        }
-    },
-    data: {
-        fonts: ['Angoun','Census','Chatu','ChatuLight','Gantgaw','Kamjing_2','Khyay','Kuttar',
-        'MasterpieceUniRound','Mon3Anonta1','Myanmar3','MyanmarSansPro','MyanmarSquareLight',
-        'MyanmarText','MyanmarYinmar','NamKhoneUnicode','Nayone','Njaun','NK_SSmart2','NK_SSmart3',
-        'NK_SSmart4','NotoSansMyanmar','NotoSansMyanmarUI','Padauk','PadaukBook','Pauklay','Phetsot',
-        'Phiksel','PhikselSmooth','Ponenyet','Sabae','Sagar','Sanpya','Tagu','Tharlon','Thuriya','Waso','YoeYar'],
-        selectedFonts: [],
-        active: 0
-    },
-    methods: {
-        changeActive: function(active) {
-            this.active = active;
-        },
-        selectFont: function(index) {
-            var selected = this.selectedFonts[index];
-            console.log(selected);
-            selected.selected = !selected.selected;
-            console.log(selected);
-            Vue.set(this.selectedFonts, index, selected);
-        }
-    }
-})
-
-/***/ }),
-
-/***/ 44:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_font_line_vue__ = __webpack_require__(47);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7e11e0c3_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_font_line_vue__ = __webpack_require__(46);
-var disposed = false
-function injectStyle (ssrContext) {
-  if (disposed) return
-  __webpack_require__(51)
-}
-var normalizeComponent = __webpack_require__(45)
-/* script */
-
-/* template */
-
-/* styles */
-var __vue_styles__ = injectStyle
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_font_line_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_7e11e0c3_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_font_line_vue__["a" /* default */],
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\font-line.vue"
-if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] font-line.vue: functional components are not supported with templates, they should use render functions.")}
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-7e11e0c3", Component.options)
-  } else {
-    hotAPI.reload("data-v-7e11e0c3", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
-
-
-/***/ }),
-
-/***/ 45:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -260,124 +161,81 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-
-/***/ 46:
+/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('tr', [_c('td', [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.selected),
-      expression: "selected"
-    }],
-    attrs: {
-      "type": "checkbox"
-    },
-    domProps: {
-      "checked": Array.isArray(_vm.selected) ? _vm._i(_vm.selected, null) > -1 : (_vm.selected)
-    },
-    on: {
-      "change": _vm.onSelect,
-      "__c": function($event) {
-        var $$a = _vm.selected,
-          $$el = $event.target,
-          $$c = $$el.checked ? (true) : (false);
-        if (Array.isArray($$a)) {
-          var $$v = null,
-            $$i = _vm._i($$a, $$v);
-          if ($$el.checked) {
-            $$i < 0 && (_vm.selected = $$a.concat($$v))
-          } else {
-            $$i > -1 && (_vm.selected = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
-          }
-        } else {
-          _vm.selected = $$c
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__font_line_vue__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__level_bar_vue__ = __webpack_require__(10);
+
+
+
+Vue.component('font-line', __WEBPACK_IMPORTED_MODULE_0__font_line_vue__["a" /* default */])
+Vue.component('level-bar', __WEBPACK_IMPORTED_MODULE_1__level_bar_vue__["a" /* default */]);
+new Vue({
+    el: '#app',
+    created: function() {
+        for (var font in this.fonts) {
+            this.selectedFonts.push({name: this.fonts[font], selected: false});
         }
-      }
+    },
+    data: {
+        fonts: ['Angoun','Census','Chatu','ChatuLight','Gantgaw','Kamjing_2','Khyay','Kuttar',
+        'MasterpieceUniRound','Mon3Anonta1','Myanmar3','MyanmarSansPro','MyanmarSquareLight',
+        'MyanmarText','MyanmarYinmar','NamKhoneUnicode','Nayone','Njaun','NK_SSmart2','NK_SSmart3',
+        'NK_SSmart4','NotoSansMyanmar','NotoSansMyanmarUI','Padauk','PadaukBook','Pauklay','Phetsot',
+        'Phiksel','PhikselSmooth','Ponenyet','Sabae','Sagar','Sanpya','Tagu','Tharlon','Thuriya','Waso','YoeYar'],
+        selectedFonts: [],
+        active: 0
+    },
+    methods: {
+        changeActive: function(active) {
+            this.active = active;
+        },
+        selectFont: function(index) {
+            var selected = this.selectedFonts[index];
+            console.log(selected);
+            selected.selected = !selected.selected;
+            console.log(selected);
+            Vue.set(this.selectedFonts, index, selected);
+        }
     }
-  })]), _vm._v(" "), _c('td', {
-    staticClass: "font-name-col"
-  }, [_vm._v(_vm._s(_vm.fontName))]), _vm._v(" "), _c('td', {
-    style: ({
-      fontFamily: _vm.fontName
-    })
-  }, [_vm._v("ကခဂဃငစဆဇဈညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဝသဟဠအ ကိုကြီး မှီခို ချောက် ချွတ် ကြိုက် ၁၂၃၄၅၆၇၈၉၀")])])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-7e11e0c3", esExports)
-  }
-}
+})
 
 /***/ }),
-
-/***/ 47:
+/* 2 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["a"] = ({
-  props: ['font'],
-  data: function() {
-      return {
-          fontName: this.font.name,
-          selected: this.font.selected
-      }
-  },
-  methods: {
-      onSelect: function() {
-          this.$emit('select-font');
-      }
-  }
-});
-
-
-/***/ }),
-
-/***/ 48:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_level_bar_vue__ = __webpack_require__(49);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f8953f4a_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_level_bar_vue__ = __webpack_require__(50);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_font_line_vue__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_316b56a7_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_font_line_vue__ = __webpack_require__(9);
 var disposed = false
-var normalizeComponent = __webpack_require__(45)
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(3)
+}
+var normalizeComponent = __webpack_require__(0)
 /* script */
 
 /* template */
 
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
-  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_level_bar_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_f8953f4a_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_level_bar_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_font_line_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_316b56a7_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_font_line_vue__["a" /* default */],
   __vue_styles__,
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "src\\level-bar.vue"
+Component.options.__file = "src/font-line.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] level-bar.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] font-line.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -386,9 +244,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f8953f4a", Component.options)
+    hotAPI.createRecord("data-v-316b56a7", Component.options)
   } else {
-    hotAPI.reload("data-v-f8953f4a", Component.options)
+    hotAPI.reload("data-v-316b56a7", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -399,34 +257,47 @@ if (false) {(function () {
 
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 49:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+// style-loader: Adds some css to the DOM by adding a <style> tag
 
-"use strict";
-//
-//
-//
-//
-//
-//
-//
-//
-//
+// load the styles
+var content = __webpack_require__(4);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(6)("d2c7c94e", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-316b56a7\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font-line.vue", function() {
+     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-316b56a7\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font-line.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
-/* harmony default export */ __webpack_exports__["a"] = ({
-  props: ['active'],
-  methods: {
-      changeActive: function(active) {
-          this.$emit('change-active', active)
-      }
-  }
-});
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.font-name-col {\n    width: 210px;\n}\n", ""]);
+
+// exports
 
 
 /***/ }),
-
-/***/ 5:
+/* 5 */
 /***/ (function(module, exports) {
 
 /*
@@ -508,96 +379,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-
-/***/ 50:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('nav', {
-    staticClass: "level"
-  }, [_c('div', {
-    staticClass: "level-left"
-  }, [_c('p', {
-    staticClass: "level-item"
-  }, [_c('a', {
-    class: {
-      'button is-success': _vm.active === 0
-    },
-    on: {
-      "click": function($event) {
-        _vm.changeActive(0)
-      }
-    }
-  }, [_vm._v("All")])]), _vm._v(" "), _c('p', {
-    staticClass: "level-item"
-  }, [_c('a', {
-    class: {
-      'button is-success': _vm.active === 1
-    },
-    on: {
-      "click": function($event) {
-        _vm.changeActive(1)
-      }
-    }
-  }, [_vm._v("Compare")])])])])
-}
-var staticRenderFns = []
-render._withStripped = true
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-f8953f4a", esExports)
-  }
-}
-
-/***/ }),
-
-/***/ 51:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(52);
-if(typeof content === 'string') content = [[module.i, content, '']];
-if(content.locals) module.exports = content.locals;
-// add the styles to the DOM
-var update = __webpack_require__(53)("7a0192c1", content, false);
-// Hot Module Replacement
-if(false) {
- // When the styles change, update the <style> tags
- if(!content.locals) {
-   module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e11e0c3\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font-line.vue", function() {
-     var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7e11e0c3\",\"scoped\":false,\"hasInlineConfig\":false}!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./font-line.vue");
-     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-     update(newContent);
-   });
- }
- // When the module is disposed, remove the <style> tags
- module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 52:
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(5)(undefined);
-// imports
-
-
-// module
-exports.push([module.i, "\n.font-name-col {\r\n    width: 210px;\n}\r\n", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ 53:
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -616,7 +398,7 @@ if (typeof DEBUG !== 'undefined' && DEBUG) {
   ) }
 }
 
-var listToStyles = __webpack_require__(54)
+var listToStyles = __webpack_require__(7)
 
 /*
 type StyleObject = {
@@ -818,8 +600,7 @@ function applyToTag (styleElement, obj) {
 
 
 /***/ }),
-
-/***/ 54:
+/* 7 */
 /***/ (function(module, exports) {
 
 /**
@@ -851,6 +632,216 @@ module.exports = function listToStyles (parentId, list) {
 }
 
 
-/***/ })
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-/******/ });
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: ['font'],
+  data: function() {
+      return {
+          fontName: this.font.name,
+          selected: this.font.selected
+      }
+  },
+  methods: {
+      onSelect: function() {
+          this.$emit('select-font');
+      }
+  }
+});
+
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('tr', [_c('td', [_c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.selected),
+      expression: "selected"
+    }],
+    attrs: {
+      "type": "checkbox"
+    },
+    domProps: {
+      "checked": Array.isArray(_vm.selected) ? _vm._i(_vm.selected, null) > -1 : (_vm.selected)
+    },
+    on: {
+      "change": _vm.onSelect,
+      "__c": function($event) {
+        var $$a = _vm.selected,
+          $$el = $event.target,
+          $$c = $$el.checked ? (true) : (false);
+        if (Array.isArray($$a)) {
+          var $$v = null,
+            $$i = _vm._i($$a, $$v);
+          if ($$el.checked) {
+            $$i < 0 && (_vm.selected = $$a.concat($$v))
+          } else {
+            $$i > -1 && (_vm.selected = $$a.slice(0, $$i).concat($$a.slice($$i + 1)))
+          }
+        } else {
+          _vm.selected = $$c
+        }
+      }
+    }
+  })]), _vm._v(" "), _c('td', {
+    staticClass: "font-name-col"
+  }, [_vm._v(_vm._s(_vm.fontName))]), _vm._v(" "), _c('td', {
+    style: ({
+      fontFamily: _vm.fontName
+    })
+  }, [_vm._v("ကခဂဃငစဆဇဈညဋဌဍဎဏတထဒဓနပဖဗဘမယရလဝသဟဠအ ကိုကြီး မှီခို ချောက် ချွတ် ကြိုက် ၁၂၃၄၅၆၇၈၉၀")]), _vm._v(" "), _c('td', [_c('a', {
+    attrs: {
+      "href": './fonts/' + _vm.fontName + '.ttf'
+    }
+  }, [_vm._v("Download")])])])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-316b56a7", esExports)
+  }
+}
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_level_bar_vue__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_370ed63f_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_level_bar_vue__ = __webpack_require__(12);
+var disposed = false
+var normalizeComponent = __webpack_require__(0)
+/* script */
+
+/* template */
+
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__node_modules_vue_loader_lib_selector_type_script_index_0_level_bar_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_370ed63f_hasScoped_false_node_modules_vue_loader_lib_selector_type_template_index_0_level_bar_vue__["a" /* default */],
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src/level-bar.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] level-bar.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-370ed63f", Component.options)
+  } else {
+    hotAPI.reload("data-v-370ed63f", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["a"] = ({
+  props: ['active'],
+  methods: {
+      changeActive: function(active) {
+          this.$emit('change-active', active)
+      }
+  }
+});
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('nav', {
+    staticClass: "level"
+  }, [_c('div', {
+    staticClass: "level-left"
+  }, [_c('p', {
+    staticClass: "level-item"
+  }, [_c('a', {
+    class: {
+      'button is-success': _vm.active === 0
+    },
+    on: {
+      "click": function($event) {
+        _vm.changeActive(0)
+      }
+    }
+  }, [_vm._v("All")])]), _vm._v(" "), _c('p', {
+    staticClass: "level-item"
+  }, [_c('a', {
+    class: {
+      'button is-success': _vm.active === 1
+    },
+    on: {
+      "click": function($event) {
+        _vm.changeActive(1)
+      }
+    }
+  }, [_vm._v("Compare")])])])])
+}
+var staticRenderFns = []
+render._withStripped = true
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-370ed63f", esExports)
+  }
+}
+
+/***/ })
+/******/ ]);
