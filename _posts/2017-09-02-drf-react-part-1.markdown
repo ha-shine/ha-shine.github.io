@@ -4,7 +4,7 @@ title:  "Django Rest TokenAuthentication with React Frontend Part 1"
 date:   2017-09-02 22:56:38 +0800
 categories: django django-rest reactjs tokenauthentication
 ---
-As the title says I will show you how to write [Django-Rest-Framework](http://www.django-rest-framework.org) endpoint and [reactjs](https://facebook.github.io/react/) front-end with TokenAuthentication in mini series. I will show you how to do the user registration, logging in and out, and a way for registered users to see their profile. I will use my own custom user model for finer control. Without much further ado, let's dive right in!
+As the title says I will show you how to write [Django-Rest-Framework](http://www.django-rest-framework.org) endpoint and [reactjs](https://facebook.github.io/react/) front-end with TokenAuthentication in this mini-series. I will show you how to do the user registration, logging in and out, and a way for registered users to see their profile. I will use my own custom user model for finer control. Without much further ado, let's dive right in!
 
 ## Setup
 
@@ -14,7 +14,7 @@ If you have pip installed, great. If not, install pip for python. You can read u
 pip install django djangorestframework
 ```
 
-For react, I will use create-react-app, if you don't know what is this, it's [here](https://github.com/facebookincubator/create-react-app). It is the easiest way to start a react project without worrying about the dark arts of configuration that is webpack. Install create-react-app globally using npm.
+For react, I will use create-react-app, if you don't know what is this, it's [here](https://github.com/facebookincubator/create-react-app). It is the easiest way to start a react project without worrying about the dark arts of configuration that is webpack. Install `create-react-app` globally using npm.
 
 ```shell
 npm install --global create-react-app
@@ -46,7 +46,7 @@ You should be seeing something like below in your directory after this step.
 
 ## Django Configuration
 
-Let's cd into server folder and do some configuration so our djangorestframework works. The steps from now on assumes you are in the server directory. Before doing anything let's make sure Django recognizes our django-rest-framework. In `./server/settings.py` add `rest_framework` into `INSTALL_APPS`.
+Let's cd into server folder and do some configuration so our djangorestframework works. The steps from now on assumes you are in the server directory. Before doing anything let's make sure Django recognizes our django-rest-framework. In `./server/settings.py` add `rest_framework` into `INSTALLED_APPS`.
 
 ```python
 INSTALLED_APPS = (
@@ -155,12 +155,14 @@ class CustomUser(AbstractBaseUser):
         return self.email
 ```
 
-Ok there is a lot going on in this snippet.
+Ok what are these models.
 
-- `CustomUser` is our user model for handling user authentication. There is nothing much going on in this model. `USERNAME_FIELD` is used to identify `email` field is used as the username.
-- `CustomUserManager` is our model manager for user model created above. You can read more about customizing authentication in this [link](https://docs.djangoproject.com/en/1.11/topics/auth/customizing/).
+- `CustomUser` is our user model for handling user authentication. There is nothing much going on in this model. `USERNAME_FIELD` is used to identify `email` field is used as the username. Django will automatically add a constraint for this field, so there will be no duplicate rows with same email.
+- `CustomUserManager` is our model manager for user model created above. This is not really a model, as in there will be no table in the database for this class.
 
-We still need to inform our root app that we will be using this `CustomUser` model in place of the default user account. Add this to `./server/settings.py`.
+You can read more about customizing authentication in this [link](https://docs.djangoproject.com/en/1.11/topics/auth/customizing/).
+
+We still need to inform our root app that we will be using this `CustomUser` model in place of the default user accounts. Add this to `./server/settings.py`.
 
 ```python
 AUTH_USER_MODEL = 'myapp.CustomUser'
@@ -179,4 +181,4 @@ Let's test whether our models are working. Open a shell session by running `pyth
 from myapp.models import CustomUser
 CustomUser.objects.create_user(email='user1@test.com', password='password')
 ```
-This will create a user with an email `user1@test.com`, if you try to create another user with the same email, you will be slapped in the face with `django.db.utils.IntegrityError`. Go create one if you don't believe me, go ahead, I dare you. When you look at the password of x after creation with `x.password`, you will see that the password is hashed by default. In the next part I will be showing on to use DRF serializers, and views plus how to test them using Browsable API.
+This will create a user with the email `user1@test.com`, if you try to create another user with the same email, you will be slapped in the face with `django.db.utils.IntegrityError`. Go create one if you don't believe me, go ahead, I dare you. When you look at the password of x after creation with `x.password`, you will see that the password is hashed by default. In the next part I will be showing on to use DRF serializers, and views plus how to test them using Browsable API.
