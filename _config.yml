@@ -17,16 +17,26 @@ title: Htet Aung Shine
 email: h@shine.rocks
 description: > # this means to ignore newlines until "baseurl:"
   I write stuffs related to computers.
-baseurl: "" # the subpath of your site, e.g. /blog
+  Tweet to me at <a href="https://twitter.com/_sha94" target="_blank">@_sha94<a>
+baseurl: / # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: _sha94
-github_username:  ha-shine
+permalink:        pretty
+
+author:
+  name:           'Shine'
+  url:            https://github.com/ha-shine
+
+github:
+  repo: https://github.com/ha-shine
 
 # Build settings
-markdown: kramdown
 theme: minima
+markdown:         kramdown
+highlighter:      pygments
 plugins:
   - jekyll-feed
+  - jekyll-paginate
+paginate: 5
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
